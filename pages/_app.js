@@ -62,7 +62,7 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>Notus NextJS by Creative Tim</title>
+          <title>Web based PA</title>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXgm7aW2thkA1lZaYiPmYH3Ve2Diay8pM"></script>
         </Head>
         <Layout>

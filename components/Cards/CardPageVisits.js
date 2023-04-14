@@ -17,10 +17,10 @@ export default function CardPageVisits({data}) {
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
                 Logs
-                <label className="switch"> 
+                {/* <label className="switch"> 
       <input type="checkbox" checked={isChecked} onChange={handleToggle} />
       <span className="slider" />
-    </label>
+    </label> */}
 
     
               </h3>
@@ -42,10 +42,10 @@ export default function CardPageVisits({data}) {
               <tr>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                   Land ID
-                  <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                  {/* <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
     <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
     <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-</div>
+</div> */}
                 </th>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                   PH

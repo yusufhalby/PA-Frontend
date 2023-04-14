@@ -34,14 +34,14 @@ export default function FooterSmall(props) {
                     Creative Tim
                   </a>
                 </li> */}
-                <li>
+                {/* <li>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=nnjs-footer-small"
                     className="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
                   >
                     About Us
                   </a>
-                </li>
+                </li> */}
                 {/* <li>
                   <a
                     href="http://blog.creative-tim.com?ref=nnjs-footer-small"

@@ -27,7 +27,7 @@ const PagesDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Demo Pages
+        Pages
       </a>
       <div
         ref={popoverDropdownRef}
@@ -53,7 +53,7 @@ const PagesDropdown = () => {
             Dashboard
           </a>
         </Link>
-        <Link href="/admin/settings">
+        {/* <Link href="/admin/settings">
           <a
             href="#pablo"
             className={
@@ -62,8 +62,8 @@ const PagesDropdown = () => {
           >
             Settings
           </a>
-        </Link>
-        <Link href="/admin/tables">
+        </Link> */}
+        {/* <Link href="/admin/tables">
           <a
             href="#pablo"
             className={
@@ -72,7 +72,7 @@ const PagesDropdown = () => {
           >
             Tables
           </a>
-        </Link>
+        </Link> */}
         <Link href="/admin/maps">
           <a
             href="#pablo"

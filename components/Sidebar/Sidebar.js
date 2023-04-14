@@ -21,12 +21,12 @@ export default function Sidebar() {
             <i className="fas fa-bars"></i>
           </button>
           {/* Brand */}
-          <Link href="/">
+          <Link href="/landing">
             <a
               href="#pablo"
               className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             >
-              Notus NextJS
+              Web based PA
             </a>
           </Link>
           {/* User */}
@@ -49,12 +49,12 @@ export default function Sidebar() {
             <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
               <div className="flex flex-wrap">
                 <div className="w-6/12">
-                  <Link href="/">
+                  <Link href="/landing">
                     <a
                       href="#pablo"
                       className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     >
-                      Notus NextJS
+                      Web based PA
                     </a>
                   </Link>
                 </div>
@@ -113,7 +113,7 @@ export default function Sidebar() {
                 </Link>
               </li>
 
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link href="/admin/settings">
                   <a
                     href="#pablo"
@@ -135,9 +135,9 @@ export default function Sidebar() {
                     Settings
                   </a>
                 </Link>
-              </li>
+              </li> */}
 
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link href="/admin/tables">
                   <a
                     href="#pablo"
@@ -159,7 +159,7 @@ export default function Sidebar() {
                     Tables
                   </a>
                 </Link>
-              </li>
+              </li> */}
 
               <li className="items-center">
                 <Link href="/admin/maps">
@@ -255,13 +255,13 @@ export default function Sidebar() {
             </ul>
 
             {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
+            {/* <hr className="my-4 md:min-w-full" /> */}
             {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+            {/* <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
               Documentation
-            </h6>
+            </h6> */}
             {/* Navigation */}
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+            {/* <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="inline-flex">
                 <a
                   href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/colors/notus"
@@ -349,7 +349,7 @@ export default function Sidebar() {
                   VueJS
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </nav>

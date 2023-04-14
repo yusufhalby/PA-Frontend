@@ -85,10 +85,10 @@ export default function Profile() {
                       </div>
                       <div className="lg:mr-4 p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                          89
+                          9
                         </span>
                         <span className="text-sm text-blueGray-400">
-                          Comments
+                          Lands
                         </span>
                       </div>
                     </div>
@@ -96,30 +96,26 @@ export default function Profile() {
                 </div>
                 <div className="text-center mt-12">
                   <h3 className="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-                    Jenna Stones
+                    Yusuf Halby
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
-                    Los Angeles, California
+                    Luxor, Egypt
                   </div>
                   <div className="mb-2 text-blueGray-600 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-                    Solution Manager - Creative Tim Officer
+                    Computer Engineering - Faculty of Engineering
                   </div>
                   <div className="mb-2 text-blueGray-600">
                     <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-                    University of Computer Science
+                    Aswan University
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                        An artist of considerable range, Jenna the name taken by
-                        Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                        performs and records all of his own music, giving it a
-                        warm, intimate feel with a solid groove structure. An
-                        artist of considerable range.
+                      Proident sunt pariatur esse est nulla deserunt eu magna. Laborum ad quis qui tempor velit est aute. Aute non sint cillum magna commodo. Laborum sunt laborum dolor culpa nisi voluptate id aliqua enim sunt labore. Duis velit est minim culpa do amet nostrud. Magna nostrud non ea reprehenderit adipisicing occaecat adipisicing nostrud non nisi commodo occaecat.
                       </p>
                       <a
                         href="#pablo"
