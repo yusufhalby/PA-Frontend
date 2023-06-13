@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 // components
 
@@ -8,7 +10,16 @@ import MapExample from "components/Maps/MapExample.js";
 
 import Admin from "layouts/Admin.js";
 
-export default function Maps() {
+export default function Maps(props) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!props.authData.isAuth && !token) {
+      router.push('/auth/login');
+    }
+  }, []);
+
   return (
     <>
       <div className="flex flex-wrap">

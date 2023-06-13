@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 // layout for page
 
 import Auth from "layouts/Auth.js";
 
-export default function Register() {
+export default function Register(props) {
+  const router = useRouter();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (props.authData.isAuth || token) {
+      router.push('/admin/dashboard');
+    }
+  }, []);
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -14,7 +28,7 @@ export default function Register() {
               <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
                   <h6 className="text-blueGray-500 text-sm font-bold">
-                    Sign up with
+                    Sign up with 
                   </h6>
                 </div>
                 <div className="btn-wrapper text-center">
@@ -39,7 +53,13 @@ export default function Register() {
                 <div className="text-blueGray-400 text-center mb-3 font-bold">
                   <small>Or sign up with credentials</small>
                 </div>
-                <form>
+                <form onSubmit={e =>
+                  props.onSignup(e, {
+                  name,
+                  email,
+                  password
+                  })
+                }>
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -48,7 +68,9 @@ export default function Register() {
                       Name
                     </label>
                     <input
-                      type="email"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Name"
                     />
@@ -63,6 +85,8 @@ export default function Register() {
                     </label>
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
                     />
@@ -77,6 +101,8 @@ export default function Register() {
                     </label>
                     <input
                       type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
                     />
@@ -105,7 +131,7 @@ export default function Register() {
                   <div className="text-center mt-6">
                     <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                      type="button"
+                      type="submit"
                     >
                       Create Account
                     </button>

@@ -1,9 +1,20 @@
 import React from "react";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
-export default function Profile() {
+export default function Profile(props) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!props.authData.isAuth && !token) {
+      router.push('/auth/login');
+    }
+  }, []);
+
   return (
     <>
       <Navbar transparent />

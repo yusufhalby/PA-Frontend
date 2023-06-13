@@ -1,4 +1,6 @@
 import React, { useState }  from "react";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:8080/logs');
@@ -20,7 +22,15 @@ import CardSocialTraffic from "components/Cards/CardSocialTraffic.js";
 
 import Admin from "layouts/Admin.js";
 
-export default function Dashboard({data}) {
+export default function Dashboard(props) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!props.authData.isAuth && !token) {
+      router.push('/auth/login');
+    }
+  }, []);
 
   return (
     <>
@@ -35,7 +45,7 @@ export default function Dashboard({data}) {
       </div> */}
       <div className="flex flex-wrap mt-4">
         {/* <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4"> */}
-          <CardPageVisits data={data}/>
+          <CardPageVisits data={props.data}/>
         {/* </div> */}
         {/* <div className="w-full xl:w-4/12 px-4">
           <CardSocialTraffic />
