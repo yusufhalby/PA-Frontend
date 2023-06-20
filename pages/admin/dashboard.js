@@ -2,14 +2,6 @@ import React, { useState }  from "react";
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:8080/logs');
-  const data = await res.json();
-  // console.log(data, res);
-  return {
-    props: { data: data.logs, fallback: false }
-  }
-}
 
 // components
 
@@ -21,6 +13,18 @@ import CardSocialTraffic from "components/Cards/CardSocialTraffic.js";
 // layout for page
 
 import Admin from "layouts/Admin.js";
+
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:8080/logs');
+  const data = await res.json();
+  // console.log(data, res);
+  return {
+    props: { data: data.logs, fallback: false }
+  }
+}
+
+
 
 export default function Dashboard(props) {
   const router = useRouter();
