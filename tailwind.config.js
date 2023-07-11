@@ -4,16 +4,37 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   purge: {
     enabled: true,
-    content: ["./**/*.html", "./*.html", "./**/*.js", "./*.js"],
+    content: [
+      "./**/*.html",
+      "./*.html",
+      "./**/*.js",
+      "./*.js",
+     
+    ],
     options: {
       safelist: [],
     },
   },
   theme: {
-    colors: {
-      ...colors,
-    },
     extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        black: colors.black,
+        white: colors.white,
+        emerald: colors.emerald,
+        indigo: colors.indigo,
+        yellow: colors.yellow,
+        stone: colors.warmGray,
+        sky: colors.lightBlue,
+        neutral: colors.trueGray,
+        gray: colors.coolGray,
+        slate: colors.blueGray,
+        lime: colors.lime,
+        rose: colors.rose,
+        green: colors.green,
+      },
+
       minHeight: {
         "screen-75": "75vh",
       },
@@ -88,6 +109,8 @@ module.exports = {
   ],
   plugins: [
     require("@tailwindcss/forms"),
+  
+
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([

@@ -7,32 +7,25 @@ export default function Navbar() {
     <>
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
-        <div className="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
+        <div className="w-full mx-autp items-center flex  md:flex-nowrap flex-wrap md:px-10 px-4">
           {/* Brand */}
+          <div>
+            <img
+              className="w-12 mr-2"
+              alt=""
+              src="https://cdn-icons-png.flaticon.com/512/912/912198.png?w=740&t=st=1688744826~exp=1688745426~hmac=c17b928335b11cc1bf1c75dc3ace05e9ad4f39083c7f235700f06e2fc0ec797f"
+
+
+            />
+          </div>
           <a
-            className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+            className="text-white text-4xl uppercase   hidden lg:inline-block font-mono font-semibold mt-5"
             href="#pablo"
             onClick={(e) => e.preventDefault()}
+            style={{ fontFamily: "monospace", letterSpacing: "2px" }}
           >
-            Dashboard
+            overview
           </a>
-          {/* Form */}
-          <form className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
-            <div className="relative flex w-full flex-wrap items-stretch">
-              <span className="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-                <i className="fas fa-search"></i>
-              </span>
-              <input
-                type="text"
-                placeholder="Search here..."
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
-              />
-            </div>
-          </form>
-          {/* User */}
-          <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
-            <UserDropdown />
-          </ul>
         </div>
       </nav>
       {/* End Navbar */}

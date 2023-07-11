@@ -4,13 +4,14 @@ import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import { useEffect } from 'react';
+import './app.css'
 
 import PageChange from "components/PageChange/PageChange.js";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "styles/tailwind.css";
 import "./styles.css"
-
+import "../components/Maps/newmap.css";
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -89,53 +90,56 @@ if (typeof window !== 'undefined') {
     Router.push('/landing');
   };
 
-  loginHandler = (event, authData) => {
+  loginHandler = (event, authData) =>
+  {
+    console.log("logging in")
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('http://localhost:8080/auth/login', {
-      method: 'POST',
+    fetch("https://pa-api.onrender.com/auth/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: authData.email,
         password: authData.password,
-        })
+      }),
     })
-      .then(res => {
+      .then((res) => {
         if (res.status === 422) {
-          throw new Error('Validation failed.');
+          throw new Error("Validation failed.");
         }
         if (res.status !== 200 && res.status !== 201) {
-          console.log('Error!');
-          throw new Error('Could not authenticate you!');
+          console.log("Error!");
+          throw new Error("Could not authenticate you!");
         }
+        console.log("logged in");
         return res.json();
       })
-      .then(resData => {
+      .then((resData) => {
         console.log(resData);
         this.setState({
           isAuth: true,
           token: resData.token,
           authLoading: false,
-          userId: resData.userId
+          userId: resData.userId,
         });
-        localStorage.setItem('token', resData.token);
-        localStorage.setItem('userId', resData.userId);
+        localStorage.setItem("token", resData.token);
+        localStorage.setItem("userId", resData.userId);
         const remainingMilliseconds = 60 * 60 * 1000;
         const expiryDate = new Date(
           new Date().getTime() + remainingMilliseconds
         );
-        localStorage.setItem('expiryDate', expiryDate.toISOString());
+        localStorage.setItem("expiryDate", expiryDate.toISOString());
         this.setAutoLogout(remainingMilliseconds);
-        Router.push('/admin/dashboard');
+        Router.push("/admin/dashboard");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         this.setState({
           isAuth: false,
           authLoading: false,
-          error: err
+          error: err,
         });
       });
   };

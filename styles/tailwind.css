@@ -6,7 +6,28 @@
 Document
 ========
 */
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
 
+.boldy-fonty{
+  font-family: 'Belanosima', sans-serif;
+}
+
+.fonty-1{
+  font-size: 1rem;
+}
+
+.fonty-2{
+  font-size: 2rem;
+}
+.fonty-3{
+  font-size: 3rem;
+}
+.fonty-4{
+  font-size: 4rem;
+}
+.fonty-5{
+  font-size: 5rem;
+}
 /**
 Use a better box model (opinionated).
 */
